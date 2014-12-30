@@ -1,0 +1,140 @@
+import java.util.Scanner;
+/**
+ * This is practice for methods.
+ * 
+ * @Brandon Berookhim
+ * @V1
+ */
+public class makingMethods
+{
+
+    public static void main(String[] args) {
+        // Test out methods here
+        makingMethods.validate(4, 8, 6);
+    }
+
+    public static void powersOfTwo () {
+        for (double i = 2; i < 11; i++) {
+            double x = Math.pow(2,i);
+        }
+    }
+
+    public static void alarm (int numTimes) {
+        for (int i = 0; i < numTimes; i++) {
+            System.out.println("RING RING! RING RING! Progresso.");
+        }
+    }
+
+    public static int getIntFromUser(String prompt) {
+        System.out.println(prompt);
+        Scanner userScanner = new Scanner(System.in);
+        return userScanner.nextInt();
+    }
+
+    public static int sum100() {
+        int x = 0;
+        for (int i = 0; i < 101; i++) {
+            x += i;
+        }
+        return x;
+    }
+
+    public static int sumRange(int a, int b) {
+        int x = 0;
+        if (a > b) {
+            System.out.println("Error. Your first input has to be the lower bound!");
+        }
+        for (int i = a; i < b+1 ; i++) {
+            x += i;
+        }
+        return x;
+    }
+
+    public static int maxOfTwo(int a, int b) {
+        int x = 0;
+        if (a < b) {
+            x = a;
+        } else {
+            x = b;
+        }
+        return x;
+    }
+
+    public static boolean larger(double a, double b) {
+        if (a > b) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean evenlyDivisible(double a, double b) {
+        if ((a%b==0) || (b%a==0)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static int average(int a, int b, int c) {
+        int x = ((a + b + c)/3);
+        return x;
+    }
+
+    public static int average(int a, int b, int c, int d) {
+        int x = ((a + b + c + d)/4);
+        return x;
+    }
+
+    public static int average(int a, int b, int c, int d, int e) {
+        int x = ((a + b + c + d + e)/5);
+        return x;
+    }
+
+    public static String multiConcat(String a, int x) {
+        String z = a;
+        for (int i = 1; i < x; i++) {
+            a += z;
+        }
+        return a;
+    }
+
+    public static String multiConcat(String a) {
+        String z = a;
+        a += z;
+        return a;
+    }
+
+    public static int validate(int a, int b, int c) {
+        while ((a > c) || (c > b)) {
+            c = getIntFromUser("Error! Your value does not fit in the range. Please try again.");
+        }
+        return c;
+    }
+
+    public static boolean floatEquals(double a, double b, double c) {
+        if ((b + c == a) || (b - c == a)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean isIsoceles(int a, int b, int c) {
+        if (((a == b) && (b!=c)) || ((a == c) && (c!=b)) || ((b == c) && (c!=a))) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static int randomInRange(int a, int b) {
+        if (a > b) {
+            System.out.println("Error! Your first input has to be the lower bound.");
+        }
+        int range = a - b;
+        int randomNumber = (int)(Math.random()*range) + a;
+        return randomNumber;
+    }
+
+}
